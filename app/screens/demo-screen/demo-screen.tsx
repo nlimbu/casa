@@ -122,7 +122,7 @@ export const DemoScreen = observer(function DemoScreen() {
   )
 
   return (
-    <View style={FULL}>
+    <View testID="DemoScreen" style={FULL}>
       <Wallpaper />
       <Screen style={CONTAINER} preset="scroll" backgroundColor={color.transparent}>
         <Header

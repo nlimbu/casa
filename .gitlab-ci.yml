@@ -1,0 +1,40 @@
+stages:
+    - build
+    - test
+
+image: node:latest
+
+cache:
+  paths:
+    - node_modules/
+
+build:
+    stage: build
+    tags:
+        - docker
+    script:
+        - export ENV=dev
+        - uname
+        - npm install
+        # - sh "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        # - brew tap wix/brew > /dev/null 2>&1
+        # - brew install applesimutils > /dev/null 2>&1
+        # - rm -rf $TMPDIR/metro-* && rm -rf $TMPDIR/react-* && rm -rf $TMPDIR/haste-*
+        # - rm -rf ios/build
+        # - killall node || echo
+        # - xcrun simctl shutdown all
+        # - npx detox build -c ios.sim.debug
+    only:
+        - merge_request
+        - develop
+
+test:
+    stage: test
+    tags:
+        - docker
+    script:
+        - npx jest -u
+        # - npx detox test -c ios.sim.debug
+    only:
+        - merge_request
+        - develop

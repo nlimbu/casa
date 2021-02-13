@@ -1,19 +1,18 @@
 import React from "react"
-import { View, ViewStyle, TextStyle } from "react-native"
+import { View, ViewStyle, TextStyle, TouchableOpacity } from "react-native"
 import { HeaderProps } from "./header.props"
 import { Button } from "../button/button"
 import { Text } from "../text/text"
 import { Icon } from "../icon/icon"
 import { spacing } from "../../theme"
 import { translate } from "../../i18n/"
-
+import FAIcon from 'react-native-vector-icons/FontAwesome5'
 // static styles
 const ROOT: ViewStyle = {
   flexDirection: "row",
   paddingHorizontal: spacing[4],
   alignItems: "center",
-  paddingTop: spacing[5],
-  paddingBottom: spacing[5],
+  paddingVertical: 10,
   justifyContent: "flex-start",
 }
 const TITLE: TextStyle = { textAlign: "center" }
@@ -34,18 +33,24 @@ export function Header(props: HeaderProps) {
     headerTx,
     style,
     titleStyle,
+    navigation,
+    canGoBack,
   } = props
   const header = headerText || (headerTx && translate(headerTx)) || ""
 
   return (
     <View style={{ ...ROOT, ...style }}>
-      {leftIcon ? (
-        <Button preset="link" onPress={onLeftPress}>
-          <Icon icon={leftIcon} />
-        </Button>
-      ) : (
-        <View style={LEFT} />
-      )}
+      {
+        canGoBack ? leftIcon ? (
+          <Button preset="link" onPress={onLeftPress}>
+            <Icon icon={leftIcon} />
+          </Button>
+        ) : (
+          <TouchableOpacity style={LEFT} onPress={() => navigation.goBack()}>
+            <FAIcon name={'chevron-left'} size={28} color={'black'}/>
+          </TouchableOpacity>
+        ) : <View style={LEFT}/>
+      }
       <View style={TITLE_MIDDLE}>
         <Text style={{ ...TITLE, ...titleStyle }} text={header} />
       </View>

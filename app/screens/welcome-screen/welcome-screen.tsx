@@ -1,115 +1,150 @@
-import React from "react"
-import { View, Image, ViewStyle, TextStyle, ImageStyle, SafeAreaView } from "react-native"
+import React, { useState } from "react"
+import { Alert, View, Image, ViewStyle, TextStyle, ImageStyle, SafeAreaView, ActivityIndicator, Text } from "react-native"
 import { useNavigation } from "@react-navigation/native"
 import { observer } from "mobx-react-lite"
-import { Button, Header, Screen, Text, Wallpaper } from "../../components"
-import { color, spacing, typography } from "../../theme"
-const bowserLogo = require("./bowser.png")
+import { Button, Header, Screen, Wallpaper } from "components/index"
+import { color, spacing, typography } from "theme/index"
+import { Api } from "services/api"
+import _ from 'lodash'
+// import Config from 'react-native-config'
+import { TextField } from 'components/text-field/text-field'
 
-const FULL: ViewStyle = { flex: 1 }
-const CONTAINER: ViewStyle = {
-  backgroundColor: color.transparent,
-  paddingHorizontal: spacing[4],
-}
-const TEXT: TextStyle = {
-  color: color.palette.white,
-  fontFamily: typography.primary,
-}
-const BOLD: TextStyle = { fontWeight: "bold" }
+declare const Styles: any
 const HEADER: TextStyle = {
   paddingTop: spacing[3],
   paddingBottom: spacing[4] + spacing[1],
   paddingHorizontal: 0,
 }
 const HEADER_TITLE: TextStyle = {
-  ...TEXT,
-  ...BOLD,
   fontSize: 12,
   lineHeight: 15,
   textAlign: "center",
   letterSpacing: 1.5,
 }
-const TITLE_WRAPPER: TextStyle = {
-  ...TEXT,
-  textAlign: "center",
+const FULL: ViewStyle = { flex: 1 }
+
+const TEXT: TextStyle = {
+  color: color.palette.white,
+  fontFamily: typography.primary,
 }
-const TITLE: TextStyle = {
-  ...TEXT,
-  ...BOLD,
-  fontSize: 28,
-  lineHeight: 38,
-  textAlign: "center",
-}
-const ALMOST: TextStyle = {
-  ...TEXT,
-  ...BOLD,
-  fontSize: 26,
-  fontStyle: "italic",
-}
-const BOWSER: ImageStyle = {
-  alignSelf: "center",
-  marginVertical: spacing[5],
-  maxWidth: "100%",
-}
-const CONTENT: TextStyle = {
-  ...TEXT,
-  color: "#BAB6C8",
-  fontSize: 15,
-  lineHeight: 22,
-  marginBottom: spacing[5],
-}
+const BOLD: TextStyle = { fontWeight: "bold" }
+
 const CONTINUE: ViewStyle = {
   paddingVertical: spacing[4],
   paddingHorizontal: spacing[4],
-  backgroundColor: "#5D2555",
+  backgroundColor: "#5D25",
+  marginTop: spacing[8]
 }
+
+const JOIN: ViewStyle = {
+  paddingVertical: spacing[4],
+  paddingHorizontal: spacing[4],
+  marginTop: spacing[4],
+}
+
 const CONTINUE_TEXT: TextStyle = {
   ...TEXT,
   ...BOLD,
   fontSize: 13,
   letterSpacing: 2,
 }
-const FOOTER: ViewStyle = { backgroundColor: "#20162D" }
+const FOOTER: ViewStyle = { backgroundColor: "transparent" }
 const FOOTER_CONTENT: ViewStyle = {
   paddingVertical: spacing[4],
   paddingHorizontal: spacing[4],
 }
-
-export const WelcomeScreen = observer(function WelcomeScreen() {
+const CONTENT_CENTER: ViewStyle = {
+  justifyContent: 'center', alignItems: 'center'
+}
+const ICON_WIDTH = 40
+const ICON: ImageStyle = {
+  height: ICON_WIDTH, width: ICON_WIDTH,
+}
+// the base styling for the TextInput
+const INPUT_STYLE: TextStyle = {
+  fontFamily: typography.primary,
+  color: 'black',
+  marginTop: 5,
+  borderRadius: 3,
+  paddingLeft: 5
+}
+const ERROR_STYLE: TextStyle = {
+  fontFamily: typography.primary,
+  color: 'red',
+  padding: 5,
+  backgroundColor: 'white'
+}
+type WelcomeScreenProps = {
+  loggedIn: () => void,
+}
+export const WelcomeScreen = observer(function WelcomeScreen(props: WelcomeScreenProps) {
   const navigation = useNavigation()
-  const nextScreen = () => navigation.navigate("demo")
+  const signupScreen = () => navigation.navigate("signup")
+  // define the api
+  const api = new Api()
+  const [username, setUsername] = useState(__DEV__ ? 'test@dev1.dev' : '')
+  const [password, setPassword] = useState(__DEV__ ? 'Password1' : '')
+  const [isLoggingIn, setLoggingIn] = useState(false)
+  const [usernameError, setUsernameError] = useState('')
+  const [passwordError, setPasswordError] = useState('')
+  const onLoginPressed = async () => {
+    setLoggingIn(true)
+    await api.setup()
+    const res = await api.login(username, password)
+    setLoggingIn(false)
+    console.log(res)
+    if (res.ok) {
+      props.loggedIn()
+    } else {
+      const errors = _.get(res, 'data.errors')
+      if (_.size(errors) > 0) {
+        // error scenario
+        _.forEach(_.get(res, 'data.errors'), ({ msg, param }) => {
+          if (param === 'username') setUsernameError(msg)
+          if (param === 'password') setPasswordError(msg)
+        })
+      } else {
+        Alert.alert(`Login Error!`)
+      }
+    }
+  }
 
   return (
-    <View style={FULL}>
+    <View testID="loginScreen" style={FULL}>
       <Wallpaper />
-      <Screen style={CONTAINER} preset="scroll" backgroundColor={color.transparent}>
-        <Header headerTx="welcomeScreen.poweredBy" style={HEADER} titleStyle={HEADER_TITLE} />
-        <Text style={TITLE_WRAPPER}>
-          <Text style={TITLE} text="Your new app, " />
-          <Text style={ALMOST} text="almost" />
-          <Text style={TITLE} text="!" />
-        </Text>
-        <Text style={TITLE} preset="header" tx="welcomeScreen.readyForLaunch" />
-        <Image source={bowserLogo} style={BOWSER} />
-        <Text style={CONTENT}>
-          This probably isn't what your app is going to look like. Unless your designer handed you
-          this screen and, in that case, congrats! You're ready to ship.
-        </Text>
-        <Text style={CONTENT}>
-          For everyone else, this is where you'll see a live preview of your fully functioning app
-          using Ignite.
-        </Text>
+      <Screen preset="scroll" backgroundColor={color.transparent}>
+        <SafeAreaView style={FOOTER}>
+          <Header headerTx="welcomeScreen.headerText" style={HEADER} titleStyle={HEADER_TITLE} />
+          <View style={CONTENT_CENTER}><Image source={require('images/app_icon.png')} style={ICON}/></View>
+          <View style={FOOTER_CONTENT}>
+            <TextField value={username} onChangeText={changedUsername => {
+              setUsernameError('')
+              setUsername(changedUsername)
+            }} inputStyle={INPUT_STYLE} labelTx={'onboarding.username'}/>
+            {usernameError ? <Text style={ERROR_STYLE}>{usernameError}</Text> : null}
+            <TextField value={password} onChangeText={changedPassword => {
+              setPasswordError('')
+              setPassword(changedPassword)
+            }} secureTextEntry inputStyle={INPUT_STYLE} labelTx={'onboarding.password'}/>
+            {passwordError ? <Text style={ERROR_STYLE}>{passwordError}</Text> : null}
+            {isLoggingIn ? <View style={Styles.mt20}><ActivityIndicator size={'large'}/></View>
+              : <><Button
+                testID="loginButton"
+                style={CONTINUE}
+                textStyle={CONTINUE_TEXT}
+                tx="onboarding.login"
+                onPress={onLoginPressed}
+              />
+              <Button
+                testID="joinButton"
+                style={JOIN}
+                textStyle={CONTINUE_TEXT}
+                tx="onboarding.register"
+                onPress={signupScreen}
+              /></>}
+          </View>
+        </SafeAreaView>
       </Screen>
-      <SafeAreaView style={FOOTER}>
-        <View style={FOOTER_CONTENT}>
-          <Button
-            style={CONTINUE}
-            textStyle={CONTINUE_TEXT}
-            tx="welcomeScreen.continue"
-            onPress={nextScreen}
-          />
-        </View>
-      </SafeAreaView>
     </View>
   )
 })

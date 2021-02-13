@@ -1,2 +1,6 @@
 export * from "./welcome-screen/welcome-screen"
+export * from "./welcome-screen/signup"
 export * from "./demo-screen/demo-screen"
+export * from "./home"
+export * from "./settings"
+export * from "./quiz"

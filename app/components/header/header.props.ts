@@ -41,4 +41,13 @@ export interface HeaderProps {
    * Title style overrides.
    */
   titleStyle?: TextStyle
+
+  /**
+   * Title style overrides.
+   */
+  navigation?: object
+  /**
+   * Title style overrides.
+   */
+  canGoBack?: boolean
 }

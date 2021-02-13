@@ -8,9 +8,17 @@
     "invalidEmail": "Invalid email address."
   },
   "welcomeScreen": {
-    "poweredBy": "POWERED BY BOWSER",
-    "readyForLaunch": "Ready for launch.",
+    "headerText": "Welcome to Casa",
+    "signUpHeader": "Sign up",
     "continue": "CONTINUE"
+  },
+  "onboarding": {
+    "login" : "Log in",
+    "signup": "Sign Up",
+    "register": "Join Now",
+    "username": "Username",
+    "password":"Password",
+    "confirmpw":"Confirm Password"
   },
   "demoScreen": {
     "howTo": "HOW TO",

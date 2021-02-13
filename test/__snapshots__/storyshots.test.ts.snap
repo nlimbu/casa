@@ -2733,9 +2733,8 @@ exports[`Storyshots Header Behavior 1`] = `
                     "alignItems": "center",
                     "flexDirection": "row",
                     "justifyContent": "flex-start",
-                    "paddingBottom": 24,
                     "paddingHorizontal": 16,
-                    "paddingTop": 24,
+                    "paddingVertical": 10,
                   }
                 }
               >
@@ -2870,48 +2869,18 @@ exports[`Storyshots Header Behavior 1`] = `
                     "alignItems": "center",
                     "flexDirection": "row",
                     "justifyContent": "flex-start",
-                    "paddingBottom": 24,
                     "paddingHorizontal": 16,
-                    "paddingTop": 24,
+                    "paddingVertical": 10,
                   }
                 }
               >
                 <View
-                  accessible={true}
-                  focusable={true}
-                  onClick={[Function]}
-                  onResponderGrant={[Function]}
-                  onResponderMove={[Function]}
-                  onResponderRelease={[Function]}
-                  onResponderTerminate={[Function]}
-                  onResponderTerminationRequest={[Function]}
-                  onStartShouldSetResponder={[Function]}
                   style={
                     Object {
-                      "alignItems": "flex-start",
-                      "borderRadius": 4,
-                      "justifyContent": "center",
-                      "opacity": 1,
-                      "paddingHorizontal": 0,
-                      "paddingVertical": 0,
+                      "width": 32,
                     }
                   }
-                >
-                  <View>
-                    <Image
-                      source={
-                        Object {
-                          "testUri": "../../../app/components/icon/icons/arrow-left.png",
-                        }
-                      }
-                      style={
-                        Object {
-                          "resizeMode": "contain",
-                        }
-                      }
-                    />
-                  </View>
-                </View>
+                />
                 <View
                   style={
                     Object {
@@ -3036,9 +3005,8 @@ exports[`Storyshots Header Behavior 1`] = `
                     "alignItems": "center",
                     "flexDirection": "row",
                     "justifyContent": "flex-start",
-                    "paddingBottom": 24,
                     "paddingHorizontal": 16,
-                    "paddingTop": 24,
+                    "paddingVertical": 10,
                   }
                 }
               >
@@ -5137,6 +5105,7 @@ exports[`Storyshots TextField Labelling 1`] = `
               </Text>
               <TextInput
                 allowFontScaling={true}
+                autoCapitalize="none"
                 onChangeText={[Function]}
                 placeholder="omg your name"
                 placeholderTextColor="#CDD4DA"
@@ -5254,6 +5223,7 @@ exports[`Storyshots TextField Labelling 1`] = `
               </Text>
               <TextInput
                 allowFontScaling={true}
+                autoCapitalize="none"
                 onChangeText={[Function]}
                 placeholder="storybook.placeholder.test"
                 placeholderTextColor="#CDD4DA"
@@ -5390,6 +5360,7 @@ exports[`Storyshots TextField Ref Forwarding 1`] = `
               </Text>
               <TextInput
                 allowFontScaling={true}
+                autoCapitalize="none"
                 onChangeText={[Function]}
                 onFocus={[Function]}
                 placeholderTextColor="#CDD4DA"
@@ -5554,6 +5525,7 @@ exports[`Storyshots TextField Style Overrides 1`] = `
               </Text>
               <TextInput
                 allowFontScaling={true}
+                autoCapitalize="none"
                 onChangeText={[Function]}
                 placeholderTextColor="#CDD4DA"
                 rejectResponderTermination={true}
@@ -5591,6 +5563,7 @@ exports[`Storyshots TextField Style Overrides 1`] = `
               </Text>
               <TextInput
                 allowFontScaling={true}
+                autoCapitalize="none"
                 onChangeText={[Function]}
                 placeholderTextColor="#CDD4DA"
                 rejectResponderTermination={true}
@@ -5707,6 +5680,7 @@ exports[`Storyshots TextField Style Overrides 1`] = `
               </Text>
               <TextInput
                 allowFontScaling={true}
+                autoCapitalize="none"
                 onChangeText={[Function]}
                 placeholderTextColor="#CDD4DA"
                 rejectResponderTermination={true}
@@ -5840,6 +5814,7 @@ exports[`Storyshots TextField Style Overrides 1`] = `
               </Text>
               <TextInput
                 allowFontScaling={true}
+                autoCapitalize="none"
                 onChangeText={[Function]}
                 placeholderTextColor="#CDD4DA"
                 rejectResponderTermination={true}

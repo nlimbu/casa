@@ -33,7 +33,16 @@ export interface ScreenProps {
   unsafe?: boolean
 
   /**
+   * Should we not display back Action
+   */
+  canGoBack?: boolean
+
+  /**
    * By how much should we offset the keyboard? Defaults to none.
    */
   keyboardOffset?: KeyboardOffsets
+  /**
+   * By how much should we offset the keyboard? Defaults to none.
+   */
+  nonScroll?: boolean
 }
