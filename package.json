@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
     "androidProdRelease": "react-native run-android --variant=prodRelease",
     "androidProdDebug": "react-native run-android --variant=prodDebug",
     "androidLocalDev": "react-native run-android --variant=localDevDebug",

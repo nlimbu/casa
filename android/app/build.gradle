@@ -85,6 +85,8 @@ project.ext.envConfigFiles = [
     prod: ".env",
     localDev: ".env.develop"
 ]
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
+
 
 apply from: "../../node_modules/react-native/react.gradle"
 project.ext.vectoricons = [
@@ -142,6 +144,7 @@ android {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
+        resValue "string", "build_config_package", "com.casa"
         versionName "1.0"
     }
     splits {
@@ -158,6 +161,18 @@ android {
             storePassword 'android'
             keyAlias 'androiddebugkey'
             keyPassword 'android'
+        }
+    }
+    flavorDimensions "default"
+    productFlavors {
+        localDev {
+            applicationIdSuffix ".develop"
+            resValue "string", "build_config_package", "com.casa"
+            resValue "string", "facebook_authority", ""
+        }
+        prod {
+            resValue "string", "build_config_package", "com.casa"
+            resValue "string", "facebook_authority", ""
         }
     }
     buildTypes {

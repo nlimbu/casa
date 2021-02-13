@@ -6,7 +6,7 @@ import { Button, Header, Screen, Wallpaper } from "components/index"
 import { color, spacing, typography } from "theme/index"
 import { Api } from "services/api"
 import _ from 'lodash'
-// import Config from 'react-native-config'
+import Config from 'react-native-config'
 import { TextField } from 'components/text-field/text-field'
 
 declare const Styles: any
@@ -74,6 +74,7 @@ const ERROR_STYLE: TextStyle = {
   padding: 5,
   backgroundColor: 'white'
 }
+console.log(Config.API_URL)
 type WelcomeScreenProps = {
   loggedIn: () => void,
 }
