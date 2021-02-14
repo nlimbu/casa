@@ -15,6 +15,7 @@ import React, { useState, useEffect, useRef } from "react"
 import { NavigationContainerRef } from "@react-navigation/native"
 import { SafeAreaProvider, initialWindowSafeAreaInsets } from "react-native-safe-area-context"
 import * as storage from "./utils/storage"
+import codePush from "react-native-code-push";
 import {
   useBackButtonHandler,
   RootNavigator,
@@ -73,4 +74,4 @@ function App() {
   )
 }
 
-export default App
+export default codePush(App)

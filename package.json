@@ -27,7 +27,8 @@
     "postinstall": "node ./bin/postInstall",
     "prepare": "npm-run-all patch hack:*",
     "storybook": "start-storybook -p 9001 -c ./storybook",
-    "adb": "adb reverse tcp:9090 tcp:9090 && adb reverse tcp:3000 tcp:3000 && adb reverse tcp:9001 tcp:9001 && adb reverse tcp:8081 tcp:8081"
+    "adb": "adb reverse tcp:9090 tcp:9090 && adb reverse tcp:3000 tcp:3000 && adb reverse tcp:9001 tcp:9001 && adb reverse tcp:8081 tcp:8081",
+    "deploy": "./bin/deploy"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.11.0",
@@ -45,6 +46,7 @@
     "ramda": "0.27.1",
     "react": "16.13.1",
     "react-native": "0.63.2",
+    "react-native-code-push": "^7.0.0",
     "react-native-config": "^1.4.2",
     "react-native-gesture-handler": "^1.5.0",
     "react-native-keychain": "6.1.1",

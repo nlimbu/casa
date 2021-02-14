@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#
+# Setup Script
+#
+# Runs all the needed commands to set up a developer's system to run this app.
+# Customize this as your app grows.
+PS3='What do you want to deploy? '
+options=("CodePush" "Quit")
+select opt in "${options[@]}"
+do
+    case $opt in
+        "CodePush")
+            read -p "Are you sure? " -n 2 -r
+            if [[ $REPLY =~ ^[Yy]$ ]]
+            then
+              echo "\n Sending codepush update to iOS and Android..."
+              appcenter codepush release-react -a nagen545-googlemail.com/CasaAndroid -m -d Production -o build
+            fi
+            break
+            ;;
+        "Quit")
+            break
+            ;;
+        *) echo "invalid option $REPLY";;
+    esac
+done

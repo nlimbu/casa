@@ -16,9 +16,9 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* casaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* casaTests.m */; };
+		35B201C4DAE39A8790A44966 /* libPods-casa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC295A2ECAD38DD193BDDC6 /* libPods-casa.a */; };
 		7E29482125D866E300460372 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		7E29482225D866E300460372 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7E29482425D866E300460372 /* libPods-casa.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC295A2ECAD38DD193BDDC6 /* libPods-casa.a */; };
 		7E29482625D866E300460372 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		7E29482725D866E300460372 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
@@ -64,6 +64,7 @@
 		3511445592ABA873B1F914F5 /* libPods-casa-casaTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-casa-casaTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38D34FAF372307573B817F86 /* Pods-casa-casaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casa-casaTests.release.xcconfig"; path = "Target Support Files/Pods-casa-casaTests/Pods-casa-casaTests.release.xcconfig"; sourceTree = "<group>"; };
 		3F173DABCE1F8D30F12D37DB /* Pods-casa-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casa-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-casa-tvOS/Pods-casa-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		55AAF5928BE753018EC5136A /* Pods-casa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casa.debug.xcconfig"; path = "Target Support Files/Pods-casa/Pods-casa.debug.xcconfig"; sourceTree = "<group>"; };
 		7E29482D25D866E300460372 /* casa dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "casa dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E29483325D866E400460372 /* casa dev-info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "casa dev-info.plist"; path = "/Users/nagendralimbu/Documents/reactNative/casa/ios/casa dev-info.plist"; sourceTree = "<absolute>"; };
 		7E86D7D925D85CCD00DC80E9 /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
@@ -83,9 +84,8 @@
 		7E86D7E725D85CCD00DC80E9 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
 		7E86D7E825D85CCD00DC80E9 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = casa/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		97C937ECA1C0A88C40E184A6 /* Pods-casa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casa.debug.xcconfig"; path = "Target Support Files/Pods-casa/Pods-casa.debug.xcconfig"; sourceTree = "<group>"; };
+		901AA4E6C02B9E3D7AA0524A /* Pods-casa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casa.release.xcconfig"; path = "Target Support Files/Pods-casa/Pods-casa.release.xcconfig"; sourceTree = "<group>"; };
 		B9AFDC4063E3222B4D715652 /* Pods-casa-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casa-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-casa-tvOSTests/Pods-casa-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		BA452AC53D4E17D8498DBDA6 /* Pods-casa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casa.release.xcconfig"; path = "Target Support Files/Pods-casa/Pods-casa.release.xcconfig"; sourceTree = "<group>"; };
 		C11BA43EDBB998E097C47F83 /* libPods-casa-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-casa-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE5F6391EB56A0922056F423 /* Pods-casa-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-casa-tvOS.release.xcconfig"; path = "Target Support Files/Pods-casa-tvOS/Pods-casa-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -106,6 +106,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A54264067B3E78B82DC43067 /* libPods-casa.a in Frameworks */,
+				35B201C4DAE39A8790A44966 /* libPods-casa.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,7 +130,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E29482425D866E300460372 /* libPods-casa.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,14 +244,14 @@
 		DF9596098A53574E8524DB4D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				97C937ECA1C0A88C40E184A6 /* Pods-casa.debug.xcconfig */,
-				BA452AC53D4E17D8498DBDA6 /* Pods-casa.release.xcconfig */,
 				11909CB9184AABBFE91545EE /* Pods-casa-casaTests.debug.xcconfig */,
 				38D34FAF372307573B817F86 /* Pods-casa-casaTests.release.xcconfig */,
 				3F173DABCE1F8D30F12D37DB /* Pods-casa-tvOS.debug.xcconfig */,
 				CE5F6391EB56A0922056F423 /* Pods-casa-tvOS.release.xcconfig */,
 				2D36FDE2EA2A57F2EE42EE84 /* Pods-casa-tvOSTests.debug.xcconfig */,
 				B9AFDC4063E3222B4D715652 /* Pods-casa-tvOSTests.release.xcconfig */,
+				55AAF5928BE753018EC5136A /* Pods-casa.debug.xcconfig */,
+				901AA4E6C02B9E3D7AA0524A /* Pods-casa.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -350,13 +350,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7E29482A25D866E300460372 /* Build configuration list for PBXNativeTarget "casa dev" */;
 			buildPhases = (
-				7E29481E25D866E300460372 /* [CP] Check Pods Manifest.lock */,
 				7E29481F25D866E300460372 /* Start Packager */,
 				7E29482025D866E300460372 /* Sources */,
 				7E29482325D866E300460372 /* Frameworks */,
 				7E29482525D866E300460372 /* Resources */,
 				7E29482825D866E300460372 /* Bundle React Native code and images */,
-				7E29482925D866E300460372 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -631,28 +629,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7E29481E25D866E300460372 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-casa-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		7E29481F25D866E300460372 /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -685,56 +661,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
-		};
-		7E29482925D866E300460372 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-casa/Pods-casa-resources.sh",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Feather.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
-				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
-				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Feather.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Brands.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Regular.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Solid.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Fontisto.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Foundation.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Ionicons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialCommunityIcons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialIcons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Octicons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SimpleLineIcons.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-casa/Pods-casa-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		AB643EF7B75695F98CC92F12 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -925,7 +851,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 97C937ECA1C0A88C40E184A6 /* Pods-casa.debug.xcconfig */;
+			baseConfigurationReference = 55AAF5928BE753018EC5136A /* Pods-casa.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -948,7 +874,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA452AC53D4E17D8498DBDA6 /* Pods-casa.release.xcconfig */;
+			baseConfigurationReference = 901AA4E6C02B9E3D7AA0524A /* Pods-casa.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1079,7 +1005,6 @@
 		};
 		7E29482B25D866E300460372 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 97C937ECA1C0A88C40E184A6 /* Pods-casa.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1102,7 +1027,6 @@
 		};
 		7E29482C25D866E300460372 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA452AC53D4E17D8498DBDA6 /* Pods-casa.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
