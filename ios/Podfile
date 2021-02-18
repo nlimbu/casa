@@ -23,6 +23,10 @@ target 'casa' do
   end
 end
 
+target 'casa dev' do
+  casa_pods
+end
+
 target 'casa-tvOS' do
   # Pods for casa-tvOS
 

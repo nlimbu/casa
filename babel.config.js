@@ -33,6 +33,7 @@ module.exports = {
           "theme": './app/theme',
           "utils": './app/utils',
           "images": './images',
+          "models": './app/models',
       },
   }]
   ],
