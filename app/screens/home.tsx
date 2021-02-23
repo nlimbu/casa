@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react"
-import { View, Image, ImageStyle, SafeAreaView, Text, TouchableOpacity } from "react-native"
+import React, { useState } from "react"
+import { View, Image, ImageStyle, SafeAreaView, Text, TouchableOpacity, TextInput } from "react-native"
 import { useNavigation } from "@react-navigation/native"
 import { observer } from "mobx-react-lite"
-import { Header, Screen, Wallpaper, Row } from "components/index"
+import { Header, Screen, Row, Button } from "components/index"
 import { color } from "theme/index"
+import { TodoListModel } from 'models/data/todos'
+import _ from 'lodash'
 
 declare let Styles: any
 const ICON_WIDTH = 40
@@ -11,10 +13,11 @@ const ICON: ImageStyle = {
   height: ICON_WIDTH, width: ICON_WIDTH,
 }
 // the base styling for the TextInput
+const todoList = TodoListModel.create({ list: [] })
 
 export const HomeScreen = observer(function HomeScreen(props) {
   const navigation = useNavigation()
-
+  const [todoText, setTodoText] = useState('')
   return (
     <Screen statusBar={'dark-content'} preset="scroll" backgroundColor={color.transparent}>
       <SafeAreaView >
@@ -28,6 +31,17 @@ export const HomeScreen = observer(function HomeScreen(props) {
               </View>
             </TouchableOpacity>
           </Row>
+          <View style={[Styles.p10, Styles.fullWidth]}>
+            <Button
+              text="Add To Do"
+              onPress={() => {
+                navigation.navigate('todoScreen', { todoList })
+              }}
+            />
+          </View>
+
+          <Text>Total list size: {_.size(todoList.list)}</Text>
+          <Text>Total completed: {todoList.completedCount}</Text>
         </View>
       </SafeAreaView>
     </Screen>

@@ -9,7 +9,7 @@ import { NavigationContainer, NavigationContainerRef } from "@react-navigation/n
 
 import { createNativeStackNavigator } from "react-native-screens/native-stack"
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { HomeScreen, Settings, WelcomeScreen, SignupScreen, Quiz } from "../screens"
+import { HomeScreen, Settings, WelcomeScreen, SignupScreen, Quiz, Todos } from "../screens"
 import { ActivityIndicator, View } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import AsyncStorage from '@react-native-community/async-storage'
@@ -28,9 +28,21 @@ export type RootParamList = {
   primaryStack: undefined
 }
 
+/**
+ * A list of routes from which we're allowed to leave the app when
+ * the user presses the back button on Android.
+ *
+ * Anything not on this list will be a standard `back` action in
+ * react-navigation.
+ *
+ * `canExit` is used in ./app/app.tsx in the `useBackButtonHandler` hook.
+ */
+const exitRoutes = ["home"]
+export const canExit = (routeName: string) => exitRoutes.includes(routeName)
+
 const iconForRoute = {
-  Home: 'home',
-  Settings: 'cog'
+  home: 'home',
+  settings: 'cog'
 }
 const Tab = createBottomTabNavigator()
 
@@ -49,10 +61,10 @@ const HomeStack = (props) => {
         inactiveTintColor: 'gray',
       }}
     >
-      <Tab.Screen name="Home">
+      <Tab.Screen name="home">
         {props => <HomeScreen {...props} />}
       </Tab.Screen>
-      <Tab.Screen name="Settings">
+      <Tab.Screen name="settings">
         {props => <Settings logout={logout} {...props} />}
       </Tab.Screen>
     </Tab.Navigator>
@@ -65,6 +77,7 @@ export type PrimaryParamList = {
   signup: undefined,
   homeTabNav: undefined,
   quizScreen: undefined,
+  todoScreen: undefined,
 }
 const Stack = createNativeStackNavigator<PrimaryParamList>()
 const OnboardingStack = (props) => {
@@ -104,6 +117,7 @@ const AppMain = (props: AppMain) => {
         {() => <HomeStack {...props} />}
       </Stack.Screen>
       <Stack.Screen name="quizScreen" component={Quiz}/>
+      <Stack.Screen name="todoScreen" component={Todos}/>
     </Stack.Navigator>
   )
 }
