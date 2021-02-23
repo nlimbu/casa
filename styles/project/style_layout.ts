@@ -21,6 +21,8 @@ const layoutStyle = {
   },
   flexRow: { flexDirection: 'row' },
   maxZindex: { zIndex: 9999 },
+  fullWidth: { width: '100%' },
+  fullHeight: { height: '100%' },
   alignStart: {
     alignItems: 'flex-start',
   },

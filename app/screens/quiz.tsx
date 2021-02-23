@@ -44,14 +44,16 @@ export const Quiz = observer(function HomeScreen(props) {
       <SafeAreaView style={Styles.flex}>
         <Header canGoBack navigation={navigation} />
         <View style={Styles.flex}>
-          {isFetchingQuizData ? <Loading/>
-            : <FlatList
-              keyExtractor={({ id }) => `${id}`}
-              data={quizData}
-              renderItem={({ item }) => {
-                return <MultipleChoiceQuestion question={item}/>
-              }}
-            />}
+          <FlatList
+            keyExtractor={({ id }) => `${id}`}
+            data={quizData}
+            ListHeaderComponent={() => {
+              return isFetchingQuizData ? <Loading/> : null
+            }}
+            renderItem={({ item }) => {
+              return <MultipleChoiceQuestion question={item}/>
+            }}
+          />
         </View>
       </SafeAreaView>
     </Screen>
